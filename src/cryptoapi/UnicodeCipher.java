@@ -14,10 +14,10 @@ class UnicodeCipher extends Crypto {
     @Override
     public String modify() {
         StringBuilder str = new StringBuilder();
-        int sign = "enc".equals(this.mode) ? 1 : -1;
+        int sign = "enc".equals(mode) ? 1 : -1;
 
-        for (int i = 0; i < this.data.length(); i++) {
-            str.append((char) (data.charAt(i) + sign * this.key));
+        for (int i = 0; i < data.length(); i++) {
+            str.append((char) (data.charAt(i) + sign * key));
         }
 
         return str.toString();

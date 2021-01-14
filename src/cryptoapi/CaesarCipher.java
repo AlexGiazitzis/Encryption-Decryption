@@ -15,17 +15,17 @@ class CaesarCipher extends Crypto {
     public String modify() {
 
         StringBuilder str = new StringBuilder();
-        this.key = "enc".equals(this.mode) ? this.key : 26 - this.key;
+        key = "enc".equals(mode) ? key : 26 - key;
 
-        for (int i = 0; i < this.data.length(); i++) {
+        for (int i = 0; i < data.length(); i++) {
 
-            if (this.data.charAt(i) >= 'a' && this.data.charAt(i) <= 'z') {
-                str.append((char) ('a' + ((this.data.charAt(i) + this.key) % 'a') % 26));
+            if (data.charAt(i) >= 'a' && data.charAt(i) <= 'z') {
+                str.append((char) ('a' + ((data.charAt(i) + key) % 'a') % 26));
                 continue;
             }
 
-            if (this.data.charAt(i) >= 'A' && this.data.charAt(i) <= 'Z') {
-                str.append((char) ('A' + ((this.data.charAt(i) + this.key) % 'A') % 26));
+            if (data.charAt(i) >= 'A' && data.charAt(i) <= 'Z') {
+                str.append((char) ('A' + ((data.charAt(i) + key) % 'A') % 26));
                 continue;
             }
 
